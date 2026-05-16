@@ -3847,7 +3847,7 @@ void GCodeProcessor::process_G1(const std::array<std::optional<double>, 4>& axes
             m_width = DEFAULT_TOOLPATH_WIDTH;
 
         // clamp width to avoid artifacts which may arise from wrong values of m_height
-        m_width = std::min(m_width, std::max(2.0f, 4.0f * m_height));
+        m_width = std::min(m_width, 4.0f);
     }
     else if (type == EMoveType::Unretract && m_flushing) {
         int extruder_id = get_extruder_id();
